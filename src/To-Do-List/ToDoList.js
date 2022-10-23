@@ -1,14 +1,18 @@
 import React from 'react';
 
-const ToDoList = (props) => {
+const ToDoList = () => {
   return (
-    <div className='flex items-center justify-center'>
-      <div className='border-2 border-green-900 w-96 h-96 rounded-lg'>
-        <h1 className='text-center mt-4 text-xl font-bold'>To Do List</h1>
-        {/* Input goes here */}
-        {/* Input goes here */}
-        <div className='flex flex-col'>
-          <button className='btn mb-4'>Add To List</button>
+    <div className='center'>
+      <div className='border-2 border-purple-900 w-96 h-96 rounded-lg'>
+        <h1 className='text-center mt-4 text-xl font-bold text-white'>
+          To Do List
+        </h1>
+        <form className='mb-10 mt-10'>
+          <label className='text-white mr-5 ml-5'>Add Task</label>
+          <input className='rounded-lg' type='text' />
+        </form>
+        <div className='center flex-col'>
+          <button className='btn mb-4 '>Add To List</button>
           <button className='btn'>Remove To List</button>
         </div>
       </div>

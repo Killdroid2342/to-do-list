@@ -14,9 +14,15 @@ a {
 * {
   box-sizing: border-box;
 }
+body {
+  background-color: #181818;
+}
 @layer components {
   .btn {
-    @apply border-2 border-black rounded-lg w-24;
+    @apply border-2 border-black rounded-lg w-24 bg-purple-900 text-white;
+  }
+  .center {
+    @apply flex items-center justify-center;
   }
 }
 @tailwind base;
