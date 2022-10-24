@@ -1,10 +1,17 @@
 import React, { useState } from 'react';
 
 const ToDoList = (props) => {
-  const [input, setInput] = useState('');
-
-  const handleChange = (e) => {
-    setInput(e.target.value);
+  const [info, setInfo] = useState({
+    name: '',
+  });
+  const change = (event) => {
+    setInfo({ ...info, [event.target.name]: event.target.value });
+  };
+  const handleSubmit = (event) => {
+    // prevents the submit button from refreshing the page
+    event.preventDefault();
+    console.log(info);
+    setInfo({ name: '', email: '', phonenumber: '' });
   };
 
   return (
@@ -15,13 +22,13 @@ const ToDoList = (props) => {
       <div className='center'>
         <div className='border-2 border-purple-900 w-96 max-h-screen rounded-lg'>
           <h2 className='header'>Add List</h2>
-          <form className='mb-10 mt-10'>
+          <form className='mb-10 mt-10' onChange={handleSubmit}>
             <label className='text-white mr-5 ml-5'>Add Task</label>
             <input
               className='rounded-lg'
               type='text'
-              value={input}
-              onChange={handleChange}
+              name='text'
+              value={info.name}
             />
           </form>
           <div className='center flex-col'>
