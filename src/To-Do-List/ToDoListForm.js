@@ -1,19 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const ToDoList = (props) => {
-  const [info, setInfo] = useState({
-    name: '',
-  });
-  const change = (event) => {
-    setInfo({ ...info, [event.target.name]: event.target.value });
-  };
-  const handleSubmit = (event) => {
-    // prevents the submit button from refreshing the page
-    event.preventDefault();
-    console.log(info);
-    setInfo({ name: '' });
-  };
-
+const ToDoListForm = (props) => {
   return (
     <React.Fragment>
       <h1 className='center mt-4 text-4xl	font-bold text-white mb-8'>
@@ -22,14 +9,9 @@ const ToDoList = (props) => {
       <div className='center'>
         <div className='border-2 border-purple-900 w-96 max-h-screen rounded-lg'>
           <h2 className='header'>Add List</h2>
-          <form className='mb-10 mt-10' onChange={handleSubmit}>
+          <form className='mb-10 mt-10'>
             <label className='text-white mr-5 ml-5'>Add Task</label>
-            <input
-              className='rounded-lg'
-              type='text'
-              name='text'
-              value={info.name}
-            />
+            <input className='rounded-lg' type='text' name='text' />
           </form>
           <div className='center flex-col'>
             <button className='btn mb-4 '>Add To List</button>
@@ -44,4 +26,4 @@ const ToDoList = (props) => {
   );
 };
 
-export default ToDoList;
+export default ToDoListForm;
