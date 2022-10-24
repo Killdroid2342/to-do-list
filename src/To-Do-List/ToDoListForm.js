@@ -4,6 +4,10 @@ const ToDoListForm = () => {
   const [info, setInfo] = useState({
     name: '',
   });
+  const change = (e) => {
+    setInfo({ ...setInfo, [e.target.name]: e.target.value });
+  };
+
   return (
     <React.Fragment>
       <h1 className='center mt-4 text-4xl	font-bold text-white mb-8'>
@@ -14,7 +18,7 @@ const ToDoListForm = () => {
           <h2 className='header'>Add List</h2>
           <form className='mb-10 mt-10'>
             <label className='text-white mr-5 ml-5'>Add Task</label>
-            <input className='rounded-lg' type='text' name='text' />
+            <input className='rounded-lg' type='text' onChange={change} />
           </form>
           <div className='center flex-col'>
             <button className='btn mb-4 '>Add To List</button>
