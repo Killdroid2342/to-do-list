@@ -11,7 +11,7 @@ const ToDoList = (props) => {
     // prevents the submit button from refreshing the page
     event.preventDefault();
     console.log(info);
-    setInfo({ name: '', email: '', phonenumber: '' });
+    setInfo({ name: '' });
   };
 
   return (
