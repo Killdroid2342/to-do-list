@@ -1,12 +1,15 @@
 import React from 'react';
 
-const ToDoListForm = () => {
+const ToDoListForm = ({ addContact }) => {
   const [info, setInfo] = useState({
     name: '',
   });
+
   const change = (e) => {
-    setInfo({ ...setInfo, [e.target.name]: e.target.value });
+    setInfo({ ...info, [e.target.name]: e.target.value });
   };
+
+  const submit = (e) => {};
 
   return (
     <React.Fragment>
@@ -16,9 +19,14 @@ const ToDoListForm = () => {
       <div className='center'>
         <div className='border-2 border-purple-900 w-96 max-h-screen rounded-lg'>
           <h2 className='header'>Add List</h2>
-          <form className='mb-10 mt-10'>
+          <form className='mb-10 mt-10' onChange={submit}>
             <label className='text-white mr-5 ml-5'>Add Task</label>
-            <input className='rounded-lg' type='text' onChange={change} />
+            <input
+              className='rounded-lg'
+              type='text'
+              onChange={change}
+              value={info.name}
+            />
           </form>
           <div className='center flex-col'>
             <button className='btn mb-4 '>Add To List</button>
