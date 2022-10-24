@@ -1,6 +1,9 @@
 import React from 'react';
 
-const ToDoListForm = (props) => {
+const ToDoListForm = () => {
+  const [info, setInfo] = useState({
+    name: '',
+  });
   return (
     <React.Fragment>
       <h1 className='center mt-4 text-4xl	font-bold text-white mb-8'>
