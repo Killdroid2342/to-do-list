@@ -1,19 +1,6 @@
 import React, { useState } from 'react';
 
-const ToDoListForm = ({ addContact }) => {
-  const [info, setInfo] = useState({
-    name: '',
-  });
-
-  const change = (e) => {
-    setInfo({ ...info, [e.target.name]: e.target.value });
-  };
-
-  const submit = (e) => {
-    e.preventDefault();
-    addContact(info);
-  };
-
+const ToDoListForm = () => {
   return (
     <React.Fragment>
       <h1 className='center mt-4 text-4xl	font-bold text-white mb-8'>
@@ -22,14 +9,9 @@ const ToDoListForm = ({ addContact }) => {
       <div className='center'>
         <div className='border-2 border-purple-900 w-96 max-h-screen rounded-lg'>
           <h2 className='header'>Add List</h2>
-          <form className='mb-10 mt-10' onChange={submit}>
+          <form className='mb-10 mt-10'>
             <label className='text-white mr-5 ml-5'>Add Task</label>
-            <input
-              className='rounded-lg'
-              type='text'
-              onChange={change}
-              value={info.name}
-            />
+            <input className='rounded-lg' type='text' />
           </form>
           <div className='center flex-col'>
             <button className='btn mb-4 '>Add To List</button>
