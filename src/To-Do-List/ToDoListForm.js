@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const ToDoListForm = ({ addContact }) => {
   const [info, setInfo] = useState({
@@ -9,7 +9,10 @@ const ToDoListForm = ({ addContact }) => {
     setInfo({ ...info, [e.target.name]: e.target.value });
   };
 
-  const submit = (e) => {};
+  const submit = (e) => {
+    e.preventDefault();
+    addContact(info);
+  };
 
   return (
     <React.Fragment>
