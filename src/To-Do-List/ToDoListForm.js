@@ -3,10 +3,14 @@ import React, { useState } from 'react';
 const ToDoListForm = () => {
   const [testing, setTesting] = useState('');
 
-  // const test = (e) => {
-  //   console.log(e.target.value);
-  // };
   console.log(testing);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const data = { testing };
+
+    console.log(data);
+  };
 
   return (
     <React.Fragment>
@@ -26,7 +30,9 @@ const ToDoListForm = () => {
             />
           </form>
           <div className='center flex-col'>
-            <button className='btn mb-4'>Add To List</button>
+            <button className='btn mb-4' onSubmit={handleSubmit}>
+              Add To List
+            </button>
             <button className='btn'>Remove To List</button>
           </div>
           <div className='border-2 border-purple-900 h-96 rounded-lg mt-5'>
