@@ -3,9 +3,9 @@ import React from 'react';
 const ToDoList = ({ contacts }) => {
   return (
     <div>
-      {contacts.map((contact) => (
+      {contacts.map((haha) => (
         <div>
-          <p className='card-name'>{contact.name}</p>
+          <p className='card-name'>{haha.name}</p>
         </div>
       ))}
     </div>
