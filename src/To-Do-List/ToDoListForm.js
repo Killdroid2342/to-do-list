@@ -8,7 +8,7 @@ const ToDoListForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const data = { testing };
-
+    console.log('HELLO THIS IS A TEST');
     console.log(data);
   };
 
@@ -30,7 +30,7 @@ const ToDoListForm = () => {
             />
           </form>
           <div className='center flex-col'>
-            <button className='btn mb-4' onSubmit={handleSubmit}>
+            <button className='btn mb-4' onClick={handleSubmit}>
               Add To List
             </button>
             <button className='btn'>Remove To List</button>
