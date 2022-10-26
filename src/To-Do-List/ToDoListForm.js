@@ -2,16 +2,17 @@ import React, { useRef, useState } from 'react';
 
 const ToDoListForm = () => {
   const [items, setItems] = useState([]);
-
   const inputRef = useRef();
 
   function onSubmit(e) {
     e.preventDefault();
+
     const value = inputRef.current.value;
     if (value === '') return;
     setItems((prev) => {
       return [...prev, value];
     });
+    inputRef.current.value = '';
   }
   return (
     <React.Fragment>
