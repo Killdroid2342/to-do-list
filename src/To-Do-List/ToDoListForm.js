@@ -1,7 +1,14 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 
 const ToDoListForm = () => {
   const [items, setItems] = useState([]);
+
+  const inputRef = useRef();
+
+  function onSubmit(e) {
+    e.preventDefault();
+    const value = inputRef.current.value;
+  }
   return (
     <React.Fragment>
       <h1 className='center mt-4 text-4xl	font-bold text-white mb-8'>
@@ -14,7 +21,7 @@ const ToDoListForm = () => {
             <button className='text-white mr-5 ml-5' type='submit'>
               Add Task
             </button>
-            <input className='rounded-lg' type='text' />
+            <input className='rounded-lg' type='text' ref={inputRef} />
           </form>
           <div className='center flex-col'>
             <button className='btn mb-4'>Add To List</button>
