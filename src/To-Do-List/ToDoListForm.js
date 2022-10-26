@@ -3,12 +3,12 @@ import React, { useState } from 'react';
 const ToDoListForm = () => {
   const [testing, setTesting] = useState('');
 
-  console.log(testing);
+  // console.log(testing);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const data = { testing };
-    console.log('HELLO THIS IS A TEST');
+    // console.log('HELLO THIS IS A TEST');
     console.log(data);
   };
 
@@ -37,7 +37,9 @@ const ToDoListForm = () => {
           </div>
           <div className='border-2 border-purple-900 h-96 rounded-lg mt-5'>
             <h2 className='header'>List</h2>
-            <p>{testing}</p>
+            <p className='center mt-4 text-1xl border-2 border-black bg-purple-900 font-bold text-white'>
+              {testing}
+            </p>
           </div>
         </div>
       </div>
