@@ -1,17 +1,18 @@
 import React, { useRef, useState } from 'react';
 
 const ToDoListForm = () => {
-  const [items, setItems] = useState([]);
+  const [list, setList] = useState([]);
   const inputRef = useRef();
 
-  function onSubmit(e) {
+  function test(e) {
     e.preventDefault();
 
     const value = inputRef.current.value;
     if (value === '') return;
-    setItems((prev) => {
+    setList((prev) => {
       return [...prev, value];
     });
+
     inputRef.current.value = '';
   }
   return (
@@ -19,10 +20,10 @@ const ToDoListForm = () => {
       <h1 className='center mt-4 text-4xl	font-bold text-white mb-8'>
         To Do List
       </h1>
-      <div className='center'>
+      <div className='center' id='20'>
         <div className='border-2 border-purple-900 w-96 max-h-screen rounded-lg'>
           <h2 className='header'>Add List</h2>
-          <form className='mb-10 mt-10' onSubmit={onSubmit}>
+          <form className='mb-10 mt-10' test={test}>
             <button className='text-white mr-5 ml-5' type='submit'>
               Add Task
             </button>
@@ -34,7 +35,7 @@ const ToDoListForm = () => {
           </div>
           <div className='border-2 border-purple-900 h-96 rounded-lg mt-5'>
             <h2 className='header'>List</h2>
-            {items.map((item) => (
+            {list.map((item) => (
               <div>{item}</div>
             ))}
           </div>
