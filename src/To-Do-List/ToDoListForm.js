@@ -8,6 +8,10 @@ const ToDoListForm = () => {
   function onSubmit(e) {
     e.preventDefault();
     const value = inputRef.current.value;
+    if (value === '') return;
+    setItems((prev) => {
+      return [...prev, value];
+    });
   }
   return (
     <React.Fragment>
