@@ -30,7 +30,10 @@ const ToDoListForm = () => {
         <div className='border-2 border-purple-900 flex flex-col items-center justify-center '>
           <h2 className='header'>Tasks</h2>
           {add.map((adds) => (
-            <li className='text-white text-base mb-20 font-bold list-none'>
+            <li
+              className='text-white text-base mb-20 font-bold list-none'
+              key={{ adds }}
+            >
               {adds}
             </li>
           ))}
