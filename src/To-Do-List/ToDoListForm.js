@@ -15,7 +15,13 @@ const ToDoListForm = () => {
 
     inRef.current.value = '';
   };
-  return <div></div>;
+  return (
+    <React.Fragment>
+      <form onSubmit={click}>
+        add: <input ref={inRef} type='text'></input>
+      </form>
+    </React.Fragment>
+  );
 };
 
 export default ToDoListForm;
