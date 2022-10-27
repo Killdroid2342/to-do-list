@@ -18,7 +18,11 @@ body {
   background-color: #181818;
   /* color: white; */
 }
-
+@layer components {
+  .header {
+    @apply text-white text-3xl font-bold mb-14 mt-5;
+  }
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

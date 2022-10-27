@@ -19,16 +19,22 @@ const ToDoListForm = () => {
     <React.Fragment>
       <div className='border-2 border-purple-900 flex flex-col items-center justify-center '>
         <form onSubmit={click}>
-          <h1 className='text-white ml-14'>To Do List</h1>
-          <input ref={inRef} type='text'></input>
-          <button type='submit' className='ml-10 text-white bg-purple-900 p-2'>
-            Add Tasks
-          </button>
+          <h1 className='header'>To Do List</h1>
+          <div className='border-2 border-purple-900 flex flex-col items-center justify-center '>
+            <input ref={inRef} type='text'></input>
+            <button type='submit' className='text-white bg-purple-900 p-2'>
+              Add Tasks
+            </button>
+          </div>
         </form>
-        <h2 className=''>Tasks</h2>
-        {add.map((adds) => (
-          <li>{adds}</li>
-        ))}
+        <div className='border-2 border-purple-900 flex flex-col items-center justify-center '>
+          <h2 className='header'>Tasks</h2>
+          {add.map((adds) => (
+            <li className='text-white text-base mb-20 font-bold list-none'>
+              {adds}
+            </li>
+          ))}
+        </div>
       </div>
     </React.Fragment>
   );
