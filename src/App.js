@@ -2,11 +2,7 @@ import React from 'react';
 import ToDoListForm from './To-Do-List/ToDoListForm';
 
 function App() {
-  return (
-    <React.Fragment>
-      <ToDoListForm />
-    </React.Fragment>
-  );
+  return <ToDoListForm />;
 }
 
 export default App;
