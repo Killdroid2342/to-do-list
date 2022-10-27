@@ -19,7 +19,12 @@ const ToDoListForm = () => {
     <React.Fragment>
       <form onSubmit={click}>
         add: <input ref={inRef} type='text'></input>
+        <button type='submit'>Add Tasks</button>
       </form>
+      <h2>Tasks</h2>
+      {add.map((adds) => (
+        <div>{adds}</div>
+      ))}
     </React.Fragment>
   );
 };
