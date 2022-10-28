@@ -20,8 +20,9 @@ const ToDoListForm = () => {
       <div className='border-2 border-purple-900 flex flex-col items-center justify-center '>
         <form onSubmit={click}>
           <h1 className='header'>To Do List</h1>
-          <div className='border-2 border-purple-900 flex flex-col items-center justify-center '>
-            <input ref={inRef} type='text'></input>
+          <div className='border-2 border-purple-900 flex flex-col items-center justify-center mb-4'>
+            <p className='text-white mb-3'>Enter Task Below</p>
+            <input ref={inRef} type='text' className='mb-3'></input>
             <button type='submit' className='text-white bg-purple-900 p-2'>
               Add Tasks
             </button>
