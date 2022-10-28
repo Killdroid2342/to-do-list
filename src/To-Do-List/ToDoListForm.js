@@ -32,7 +32,7 @@ const ToDoListForm = () => {
           <h2 className='header'>Tasks</h2>
           {add.map((adds) => (
             <li
-              className='text-white text-base mb-20 font-bold list-none'
+              className='text-white text-base mb-12 font-bold list-none'
               key={{ adds }}
             >
               {adds}
