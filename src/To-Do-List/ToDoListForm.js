@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-
+import { v4 } from 'uuid';
 import useLocalStorage from './LocalStorage';
 
 const ToDoListForm = () => {
@@ -35,7 +35,7 @@ const ToDoListForm = () => {
           {add.map((adds) => (
             <li
               className='text-white text-base mb-12 font-bold list-none'
-              key={{ adds }}
+              key={v4()}
             >
               {adds}
             </li>
