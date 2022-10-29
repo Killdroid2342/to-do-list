@@ -19,7 +19,7 @@ const ToDoListForm = () => {
   };
   return (
     <React.Fragment>
-      <div className='border-2 border-purple-900 flex flex-col items-center justify-center '>
+      <div className='center'>
         <form onSubmit={click}>
           <h1 className='header text-center'>To Do List</h1>
           <div className='border-2 border-purple-900 flex flex-col items-center justify-center mb-4'>
@@ -30,7 +30,7 @@ const ToDoListForm = () => {
             </button>
           </div>
         </form>
-        <div className='border-2 border-purple-900 flex flex-col items-center justify-center '>
+        <div className='center'>
           <h2 className='header'>Tasks</h2>
           {add.map((adds) => (
             <li
