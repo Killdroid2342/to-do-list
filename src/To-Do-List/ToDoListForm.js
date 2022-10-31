@@ -1,6 +1,5 @@
 import React, { useState, useRef } from 'react';
 import { v4 } from 'uuid';
-import useLocalStorage from './LocalStorage';
 
 const ToDoListForm = () => {
   const inRef = useRef();
@@ -17,6 +16,11 @@ const ToDoListForm = () => {
 
     inRef.current.value = '';
   };
+
+  // deleting tasks
+  const test = () => {
+    console.log('asdsad');
+  };
   return (
     <React.Fragment>
       <div className='center'>
@@ -25,7 +29,7 @@ const ToDoListForm = () => {
           <div className='center mb-4 '>
             <p className='text-white mb-3'>Enter Task Below</p>
             <input ref={inRef} type='text' className='mb-3'></input>
-            <button type='submit' className='text-white bg-purple-900 p-2'>
+            <button type='submit' className='button'>
               Add Tasks
             </button>
           </div>
@@ -37,7 +41,10 @@ const ToDoListForm = () => {
               className='text-white text-base mb-12 font-bold list-none'
               key={v4()}
             >
-              {adds}
+              {adds}{' '}
+              <button onClick={test} className='button'>
+                Delete
+              </button>
             </li>
           ))}
         </div>

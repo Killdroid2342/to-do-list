@@ -25,6 +25,9 @@ body {
   .center {
     @apply border-2 border-purple-900 flex flex-col items-center justify-center;
   }
+  .button {
+    @apply text-white bg-purple-900 p-2;
+  }
 }
 @tailwind base;
 @tailwind components;
