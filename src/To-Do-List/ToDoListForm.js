@@ -41,8 +41,8 @@ const ToDoListForm = () => {
               className='text-white text-base mb-12 font-bold list-none'
               key={v4()}
             >
-              {adds}{' '}
-              <button onClick={test} className='button'>
+              {adds}
+              <button onClick={test} className='button ml-5 mr-5'>
                 Delete
               </button>
             </li>
