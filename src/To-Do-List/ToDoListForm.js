@@ -19,8 +19,10 @@ const ToDoListForm = () => {
 
   // deleting tasks
 
-  const test = () => {
-    console.log(add.indexOf(add));
+  const test = (filter) => {
+    setAdd((pre) => {
+      return [''];
+    });
   };
   return (
     <React.Fragment>
