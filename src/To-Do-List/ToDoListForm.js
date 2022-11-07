@@ -18,8 +18,10 @@ const ToDoListForm = () => {
   };
 
   // deleting tasks
-  const test = () => {
-    console.log('asdsad');
+
+  const handleDelete = (id) => {
+    const deleteToDo = setAdd.filter((e) => (e.key = { v4 }));
+    setAdd([...deleteToDo]);
   };
   return (
     <React.Fragment>
@@ -28,7 +30,7 @@ const ToDoListForm = () => {
           <h1 className='header text-center'>To Do List</h1>
           <div className='center mb-4 '>
             <p className='text-white mb-3'>Enter Task Below</p>
-            <input ref={inRef} type='text' className='mb-3'></input>
+            <input ref={inRef} type='text' className='mb-3' />
             <button type='submit' className='button'>
               Add Tasks
             </button>
@@ -42,7 +44,10 @@ const ToDoListForm = () => {
               key={v4()}
             >
               {adds}
-              <button onClick={test} className='button ml-5 mr-5'>
+              <button
+                onClick={() => handleDelete()}
+                className='button ml-5 mr-5'
+              >
                 Delete
               </button>
             </li>
