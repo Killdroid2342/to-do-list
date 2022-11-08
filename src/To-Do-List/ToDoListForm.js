@@ -23,7 +23,7 @@ const ToDoListForm = () => {
 
   const deleteItem = (item) => {
     // console.log(item);
-    const newList = list.filter((currItem) => currItem != item);
+    const newList = list.filter((currItem) => currItem !== item);
 
     setList(newList);
   };
