@@ -3,53 +3,63 @@ import { v4 } from 'uuid';
 
 const ToDoListForm = () => {
   const inRef = useRef();
-  const [add, setAdd] = useState([]);
+  const [list, setList] = useState([]);
 
   const click = (e) => {
     e.preventDefault();
 
     const val = inRef.current.value;
     if (val === '') return;
-    setAdd((pre) => {
-      return [...pre, val];
-    });
+    const itemData = {
+      id: v4(),
+      value: val,
+    };
+    setList([...list, itemData]);
 
     inRef.current.value = '';
   };
 
   // deleting tasks
 
-  const test = (filter) => {
-    setAdd((pre) => {
-      return [''];
-    });
+  const deleteItem = (item) => {
+    // console.log(item);
+    const newList = list.filter((currItem) => currItem != item);
+
+    setList(newList);
   };
+
   return (
     <React.Fragment>
-      <div className='center'>
-        <form onSubmit={click}>
-          <h1 className='header text-center'>To Do List</h1>
-          <div className='center mb-4 '>
-            <p className='text-white mb-3'>Enter Task Below</p>
-            <input ref={inRef} type='text' className='mb-3' />
-            <button type='submit' className='button'>
-              Add Tasks
-            </button>
-          </div>
-        </form>
-        <div className='center'>
-          <h2 className='header'>Tasks</h2>
-          {add.map((adds) => (
-            <li
-              className='text-white text-base mb-12 font-bold list-none'
-              key={v4()}
-            >
-              {adds}
-              <button onClick={test} className='button ml-5 mr-5'>
-                Delete
+      <div className='h-screen bg-blue-200'>
+        <div className='center w-1/2 bg-red-200 mx-auto'>
+          <form onSubmit={click}>
+            <h1 className='header text-center'>To Do List</h1>
+            <div className='center mb-4 '>
+              <p className='text-white mb-3'>Enter Task Below</p>
+              <input ref={inRef} type='text' className='mb-3' />
+              <button type='submit' className='button'>
+                Add Tasks
               </button>
-            </li>
-          ))}
+            </div>
+          </form>
+          <div className='center px-4 w-1/2'>
+            <h2 className='header'>Tasks</h2>
+            {list.map((item) => (
+              // item = {id: v4(), value: "radasdas"}
+              <li
+                className='text-white text-base mb-12 font-bold list-none'
+                key={item.id}
+              >
+                {item.value}
+                <button
+                  onClick={() => deleteItem(item)}
+                  className='button ml-5 mr-5'
+                >
+                  Delete
+                </button>
+              </li>
+            ))}
+          </div>
         </div>
       </div>
     </React.Fragment>
