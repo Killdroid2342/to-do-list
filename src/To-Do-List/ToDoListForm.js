@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { v4 } from 'uuid';
 
 const ToDoListForm = () => {
@@ -24,19 +24,27 @@ const ToDoListForm = () => {
   const deleteItem = (item) => {
     // console.log(item);
     const newList = list.filter((currItem) => currItem !== item);
-
     setList(newList);
   };
 
+  useEffect(() => {
+    localStorage.setItem('lists', JSON.stringify(list));
+  }, [list]);
+  useEffect(() => {
+    const storage = JSON.parse(localStorage.getItem('list'));
+    if (storage) {
+      setList(storage);
+    }
+  }, []);
   return (
     <React.Fragment>
       <div className='h-screen bg-blue-200'>
-        <div className='center w-1/2 bg-red-200 mx-auto'>
+        <div className='center w-1/2 bg-red-200 mx-auto border-2 border-purple-900'>
           <form onSubmit={click}>
             <h1 className='header text-center'>To Do List</h1>
             <div className='center mb-4 '>
               <p className='text-white mb-3'>Enter Task Below</p>
-              <input ref={inRef} type='text' className='mb-3' />
+              <input ref={inRef} type='text' className='mb-3 rounded-md' />
               <button type='submit' className='button'>
                 Add Tasks
               </button>
