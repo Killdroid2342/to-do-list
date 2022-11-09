@@ -30,6 +30,10 @@ const ToDoListForm = () => {
 
   useEffect(() => {
     localStorage.setItem('lists', JSON.stringify(list));
+    // const test = JSON.parse(localStorage.getItem('lists'));
+    // if (test) {
+    //   setList(list);
+    // }
   }, [list]);
 
   return (
