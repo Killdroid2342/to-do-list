@@ -26,7 +26,7 @@ body {
     @apply flex flex-col items-center justify-center;
   }
   .button {
-    @apply text-white bg-purple-900 p-2;
+    @apply text-white bg-purple-900 p-2 border-2 border-white rounded-md;
   }
 }
 @tailwind base;
