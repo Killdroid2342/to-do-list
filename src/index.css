@@ -23,7 +23,7 @@ body {
     @apply text-white text-3xl font-bold mb-14 mt-5;
   }
   .center {
-    @apply border-2 border-purple-900 flex flex-col items-center justify-center;
+    @apply flex flex-col items-center justify-center;
   }
   .button {
     @apply text-white bg-purple-900 p-2;
