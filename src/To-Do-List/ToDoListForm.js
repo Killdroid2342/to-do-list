@@ -26,20 +26,16 @@ const ToDoListForm = () => {
     const newList = list.filter((currItem) => currItem !== item);
     setList(newList);
   };
+  // local storage.
 
   useEffect(() => {
     localStorage.setItem('lists', JSON.stringify(list));
   }, [list]);
-  useEffect(() => {
-    const storage = JSON.parse(localStorage.getItem('list'));
-    if (storage) {
-      setList(storage);
-    }
-  }, []);
+
   return (
     <React.Fragment>
-      <div className='h-screen bg-blue-200'>
-        <div className='center w-1/2 bg-red-200 mx-auto border-2 border-purple-900'>
+      <div className='h-screen bg-grey-900'>
+        <div className='center w-1/2 bg-purple-900 mx-auto border-2 border-white'>
           <form onSubmit={click}>
             <h1 className='header text-center'>To Do List</h1>
             <div className='center mb-4 '>
@@ -53,7 +49,6 @@ const ToDoListForm = () => {
           <div className='center px-4 w-1/2'>
             <h2 className='header'>Tasks</h2>
             {list.map((item) => (
-              // item = {id: v4(), value: "radasdas"}
               <li
                 className='text-white text-base mb-12 font-bold list-none'
                 key={item.id}
