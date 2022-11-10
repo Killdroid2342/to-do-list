@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { v4 } from 'uuid';
 
 const ToDoListForm = () => {
@@ -28,14 +28,18 @@ const ToDoListForm = () => {
   };
   // local storage.
 
-  useEffect(() => {
+  const local = () => {
     localStorage.setItem('lists', JSON.stringify(list));
-    // const test = JSON.parse(localStorage.getItem('lists'));
-    // if (test) {
-    //   setList(list);
-    // }
-  }, [list]);
+    localStorage.getItem('lists');
+    console.log(list);
+  };
+  local();
 
+  const second = () => {
+    localStorage.setItem('test', 'test1');
+    localStorage.getItem('test');
+  };
+  second();
   return (
     <React.Fragment>
       <div className='h-screen bg-grey-900'>
@@ -46,7 +50,7 @@ const ToDoListForm = () => {
               <p className='text-white mb-3'>Enter Task Below</p>
               <input ref={inRef} type='text' className='mb-3 rounded-md' />
               <button type='submit' className='button'>
-                Add Tasks
+                Add Task
               </button>
             </div>
           </form>
