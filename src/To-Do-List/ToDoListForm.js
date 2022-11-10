@@ -7,6 +7,8 @@ const ToDoListForm = () => {
     JSON.parse(localStorage.getItem('lists')) ?? []
   );
 
+  document.title = `To Do List`;
+
   const click = (e) => {
     e.preventDefault();
 
