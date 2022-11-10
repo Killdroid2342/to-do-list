@@ -4,6 +4,7 @@ import { v4 } from 'uuid';
 const ToDoListForm = () => {
   const inRef = useRef();
   const [list, setList] = useState(
+    // local storage.
     JSON.parse(localStorage.getItem('lists')) ?? []
   );
 
@@ -30,7 +31,6 @@ const ToDoListForm = () => {
     setList(newList);
     localStorage.setItem('lists', JSON.stringify([...newList]));
   };
-  // local storage.
 
   return (
     <React.Fragment>
@@ -39,7 +39,9 @@ const ToDoListForm = () => {
           <form onSubmit={click}>
             <h1 className='header text-center'>To Do List</h1>
             <div className='center mb-4 '>
-              <p className='text-white mb-3'>Enter Task Below</p>
+              <p className='text-white mb-3 font-mono font-bold'>
+                Enter Task Below
+              </p>
               <input ref={inRef} type='text' className='mb-3 rounded-md' />
               <button type='submit' className='button'>
                 Add Task
