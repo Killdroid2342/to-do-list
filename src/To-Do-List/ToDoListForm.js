@@ -26,6 +26,7 @@ const ToDoListForm = () => {
     // console.log(item);
     const newList = list.filter((currItem) => currItem !== item);
     setList(newList);
+    localStorage.setItem('lists', JSON.stringify([...newList]));
   };
   // local storage.
 
