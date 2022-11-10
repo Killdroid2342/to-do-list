@@ -3,7 +3,9 @@ import { v4 } from 'uuid';
 
 const ToDoListForm = () => {
   const inRef = useRef();
-  const [list, setList] = useState([]);
+  const [list, setList] = useState(
+    JSON.parse(localStorage.getItem('lists')) ?? []
+  );
 
   const click = (e) => {
     e.preventDefault();
@@ -15,10 +17,9 @@ const ToDoListForm = () => {
       value: val,
     };
     setList([...list, itemData]);
-
+    localStorage.setItem('lists', JSON.stringify([...list, itemData]));
     inRef.current.value = '';
   };
-
   // deleting tasks
 
   const deleteItem = (item) => {
@@ -28,18 +29,6 @@ const ToDoListForm = () => {
   };
   // local storage.
 
-  const local = () => {
-    localStorage.setItem('lists', JSON.stringify(list));
-    localStorage.getItem('lists');
-    console.log(list);
-  };
-  local();
-
-  const second = () => {
-    localStorage.setItem('test', 'test1');
-    localStorage.getItem('test');
-  };
-  second();
   return (
     <React.Fragment>
       <div className='h-screen bg-grey-900'>
