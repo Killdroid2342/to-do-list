@@ -18,20 +18,6 @@ body {
   background-color: #181818;
   /* color: white; */
 }
-@layer components {
-  .header {
-    @apply text-white text-3xl font-bold mb-14 mt-5;
-  }
-  .center {
-    @apply flex flex-col items-center justify-center;
-  }
-  .button {
-    @apply text-white bg-purple-900 p-2 border-2 border-white rounded-md font-bold;
-  }
-  .button:hover {
-    @apply bg-white text-purple-900 transition-all;
-  }
-}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
