@@ -35,21 +35,26 @@ function App() {
   return (
     <React.Fragment>
       <div className='h-screen bg-grey-900'>
-        <div className='center w-1/2 bg-purple-900 mx-auto border-2 border-white'>
+        <div className='flex flex-col items-center justify-center w-1/2 bg-purple-900 mx-auto border-2 border-white'>
           <form onSubmit={click}>
-            <h1 className='header text-center'>To Do List</h1>
-            <div className='center mb-4 '>
+            <h1 className='text-white text-3xl font-bold mb-14 mt-5 text-center'>
+              To Do List
+            </h1>
+            <div className='flex flex-col items-center justify-center mb-4 '>
               <p className='text-white mb-3 font-mono font-bold'>
                 Enter Task Below
               </p>
               <input ref={inRef} type='text' className='mb-3 rounded-md' />
-              <button type='submit' className='button'>
+              <button
+                type='submit'
+                className='text-white bg-purple-900 p-2 border-2 border-white rounded-md font-bold'
+              >
                 Add Task
               </button>
             </div>
           </form>
-          <div className='center px-4 w-1/2'>
-            <h2 className='header'>Tasks</h2>
+          <div className='flex flex-col items-center justify-center px-4 w-1/2'>
+            <h2 className='text-white text-3xl font-bold mb-14 mt-5'>Tasks</h2>
             {list.map((item) => (
               <li
                 className='text-white text-base mb-12 font-bold list-none'
@@ -58,7 +63,7 @@ function App() {
                 {item.value}
                 <button
                   onClick={() => deleteItem(item)}
-                  className='button ml-5 mr-5'
+                  className='text-white bg-purple-900 p-2 border-2 border-white rounded-md font-bold ml-5 mr-5'
                 >
                   Delete
                 </button>
