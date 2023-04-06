@@ -1,1 +1,1 @@
-
+This To Do List allows the user to create tasks. These tasks will be saved to local storage so when the user goes onto the site with the same device, the tasks will still be there. You can also delete some of the tasks that you have. This will clear it from local storage.
